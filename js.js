@@ -37,3 +37,41 @@ JSON.stringify(events)
 );
 
 }
+
+function updateStats(){
+
+document.getElementById(
+"totalEvents"
+).textContent=events.length;
+
+
+
+let totalRegistered=
+events.reduce(
+(sum,event)=>
+sum+event.registered,
+0
+);
+
+
+document.getElementById(
+"registeredStudents"
+).textContent=
+totalRegistered;
+
+
+
+let remaining=
+events.reduce(
+(sum,event)=>
+sum+(event.seats-event.registered),
+0
+);
+
+
+document.getElementById(
+"remainingSeats"
+).textContent=
+remaining;
+
+}
