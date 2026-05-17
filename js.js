@@ -202,3 +202,74 @@ renderEvents();
 }
 
 }
+form.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+
+let title=
+document.getElementById(
+"title"
+).value.trim();
+
+
+let category=
+document.getElementById(
+"category"
+).value.trim();
+
+
+let seats=
+document.getElementById(
+"seats"
+).value;
+
+
+
+if(
+title==="" ||
+category==="" ||
+seats<=0
+){
+
+alert(
+"Please enter valid data"
+);
+
+return;
+
+}
+
+
+
+let newEvent={
+
+id:Date.now(),
+
+title:title,
+
+category:category,
+
+seats:Number(seats),
+
+registered:0
+
+};
+
+
+
+events.push(newEvent);
+
+
+saveData();
+
+renderEvents();
+
+
+form.reset();
+
+}
+
+);
