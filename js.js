@@ -18,3 +18,22 @@ registered:15
 }
 
 ];
+const eventContainer =
+document.getElementById("eventContainer");
+
+const form =
+document.getElementById("eventForm");
+
+const search =
+document.getElementById("search");
+
+
+
+function saveData(){
+
+localStorage.setItem(
+"events",
+JSON.stringify(events)
+);
+
+}
