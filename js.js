@@ -273,3 +273,28 @@ form.reset();
 }
 
 );
+
+search.addEventListener(
+"input",
+function(){
+
+
+let value=
+search.value.toLowerCase();
+
+let filtered=
+events.filter(
+event=>
+
+event.title
+.toLowerCase()
+.includes(value)
+
+);
+
+renderEvents(filtered);
+
+}
+
+);
+renderEvents();
