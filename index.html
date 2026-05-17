@@ -25,6 +25,117 @@ class="p-2 rounded text-black w-60">
 
 </div>
 </nav>
+<section id="hero" class="bg-gradient-to-r bg-purple-900 text-black p-10 text-center">
+
+<h2 class="text-4xl font-bold mb-3">
+Student Event Registration Dashboard
+</h2>
+
+<p>
+Register and manage school events easily
+</p>
+
+</section>
+
+<section id="total sect" class="max-w-6xl mx-auto p-6">
+
+<div class="grid md:grid-cols-3 gap-4">
+
+<div class="bg-gray-800 p-5 rounded-xl shadow text-center">
+<h3 class="font-bold">Total Events</h3>
+
+<p
+id="totalEvents"
+class="text-3xl">
+0
+</p>
+
+</div>
+
+
+<div class="bg-gray-800 p-5 rounded-xl shadow text-center">
+
+<h3 class="font-bold">
+Registered Students
+</h3>
+
+<p
+id="registeredStudents"
+class="text-3xl">
+0
+</p>
+
+</div>
+
+<div class="bg-gray-800 p-5 rounded-xl shadow text-center">
+
+<h3 class="font-bold">
+Remaining Seats
+</h3>
+
+<p
+id="remainingSeats"
+class="text-3xl"
+>
+0
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="max-w-6xl mx-auto p-6">
+
+<h2 class="text-2xl font-bold mb-4">
+Available Events
+</h2>
+
+<div
+id="eventContainer"
+class="grid md:grid-cols-3 gap-5">
+
+</div>
+
+</section>
+
+<section class="max-w-xl mx-auto bg-gray-800 p-6 rounded-xl shadow mb-10">
+
+<h2 class="text-xl font-bold mb-4">
+Add New Event
+</h2>
+
+
+<form id="eventForm">
+
+<input
+id="title"
+type="text"
+placeholder="Event title"
+class="w-full border p-2 mb-3 rounded">
+
+
+<input
+id="category"
+type="text"
+placeholder="Category"
+class="w-full border p-2 mb-3 rounded">
+
+
+<input
+id="seats"
+type="number"
+placeholder="Number of seats"
+class="w-full border p-2 mb-3 rounded">
+<button
+class="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800 w-full">
+Add Event
+</button>
+</form>
+</section>
+<script src="js.js"></script>
 
 
 
