@@ -75,3 +75,130 @@ document.getElementById(
 remaining;
 
 }
+
+function renderEvents(data=events){
+
+eventContainer.innerHTML="";
+
+
+data.forEach(event=>{
+
+
+let card=
+document.createElement("div");
+
+
+card.className=
+"bg-gray-800 rounded-xl p-5 shadow";
+
+
+card.innerHTML=`
+
+<h2 class="text-xl font-bold">
+${event.title}
+</h2>
+
+<p>
+Category:
+${event.category}
+</p>
+
+<p>
+Seats:
+${event.seats}
+</p>
+
+<p>
+Registered:
+${event.registered}
+</p>
+
+<p>
+Remaining:
+${event.seats-event.registered}
+</p>
+
+<div class="mt-4 flex gap-2">
+
+<button
+onclick="register(${event.id})"
+class="bg-blue-950 text-white px-3 py-2 rounded"
+>
+
+Register
+
+</button>
+
+
+<button
+onclick="cancelReg(${event.id})"
+class="bg-red-900 text-white px-3 py-2 rounded"
+>
+
+Cancel
+
+</button>
+
+</div>
+
+`;
+
+eventContainer.appendChild(card);
+
+});
+
+updateStats();
+
+}
+
+
+
+function register(id){
+
+let found=
+events.find(
+event=>event.id===id
+);
+
+
+if(found.registered<found.seats){
+
+found.registered++;
+
+saveData();
+
+renderEvents();
+
+}
+
+else{
+
+alert(
+"No seats available"
+);
+
+}
+
+}
+
+
+
+function cancelReg(id){
+
+let found=
+events.find(
+event=>event.id===id
+);
+
+
+if(found.registered>0){
+
+found.registered--;
+
+saveData();
+
+renderEvents();
+
+}
+
+}
