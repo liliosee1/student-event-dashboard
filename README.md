@@ -15,4 +15,4 @@ search events, and view live statistics. Data is stored using Local Storage, so 
 - HTML5  
 - Tailwind CSS  
 - Vanilla JavaScript  
-- Local Storage API  
+- Local Storage  
