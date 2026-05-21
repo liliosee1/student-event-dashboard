@@ -1,3 +1,4 @@
+
 let events =
 JSON.parse(localStorage.getItem("events")) || [
 
@@ -21,12 +22,9 @@ registered:15
 const eventContainer =
 document.getElementById("eventContainer");
 
-const form =
-document.getElementById("eventForm");
+const form = document.getElementById("eventForm");
 
-const search =
-document.getElementById("search");
-
+const search = document.getElementById("search");
 
 
 function saveData(){
@@ -37,6 +35,7 @@ JSON.stringify(events)
 );
 
 }
+
 
 function updateStats(){
 
@@ -89,7 +88,7 @@ document.createElement("div");
 
 
 card.className=
-"bg-gray-800 rounded-xl p-5 shadow";
+"bg-gray-400 rounded-xl p-5 shadow";
 
 
 card.innerHTML=`
@@ -198,35 +197,33 @@ found.registered--;
 saveData();
 
 renderEvents();
+}
+
+else{
+
+alert(
+"No registrations left"
+);
 
 }
 
 }
-form.addEventListener(
-"submit",
-function(e){
-
+form.addEventListener("submit",function(e){
 e.preventDefault();
-
-
 let title=
 document.getElementById(
 "title"
 ).value.trim();
-
-
 let category=
 document.getElementById(
 "category"
 ).value.trim();
 
-
+//validating data input
 let seats=
 document.getElementById(
 "seats"
 ).value;
-
-
 
 if(
 title==="" ||
@@ -242,7 +239,7 @@ return;
 
 }
 
-
+// Creating new event object
 
 let newEvent={
 
@@ -258,22 +255,17 @@ registered:0
 
 };
 
-
+// adding new event 
 
 events.push(newEvent);
-
-
 saveData();
 
 renderEvents();
-
-
 form.reset();
 
-}
+});
 
-);
-
+// search
 search.addEventListener(
 "input",
 function(){
